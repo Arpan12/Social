@@ -2,6 +2,7 @@ package com.social.social;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
+        try{
+            mAuth = FirebaseAuth.getInstance();
+        }catch(Exception e){
+            System.out.println("this is wrong");
+        }
 
         setContentView(R.layout.activity_main);
 
@@ -62,7 +67,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
             case R.id.add:
-                Toast.makeText(this,"add",LENGTH_LONG).show();
+                Toast.makeText(this,"notes",LENGTH_LONG).show();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Notes notes = new Notes();
+                transaction.replace(R.id.main_fragment, notes);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 return true;
             case 1:
                 Toast.makeText(this,"History",LENGTH_LONG).show();

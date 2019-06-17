@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".new_note_form">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#ED553B"
+        >
+        <EditText
+            android:id = "@+id/PostTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:hint="Title"
+            android:textSize="40sp"
+            android:defaultFocusHighlightEnabled="true"
+            android:background="#f5f5f5"
+            />
+        <EditText
+            android:id = "@+id/PostDescription"
+            android:layout_below="@+id/PostTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:hint="desription"
+            android:textSize="20sp"
+            android:defaultFocusHighlightEnabled="true"
+            android:background="#f5f5f5"
+            />
+        <EditText
+            android:id = "@+id/PostContent"
+            android:layout_below="@+id/PostDescription"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8sp"
+            android:hint="Content"
+            android:textSize="20sp"
+            android:defaultFocusHighlightEnabled="true"
+            android:background="#f5f5f5"
+            />
+        <Button
+            android:id = "@+id/submitButton"
+            android:layout_below="@id/PostContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+
+            />
+
+    </RelativeLayout>
+</FrameLayout>

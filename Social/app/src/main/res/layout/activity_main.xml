@@ -7,11 +7,11 @@
     tools:context="com.social.social.MainActivity">
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id = "@+id/UserList"
-        android:layout_height = "wrap_content"
+    <fragment
+        android:id = "@+id/main_fragment"
+        android:name = "com.social.social.Notes"
+        android:layout_height = "match_parent"
         android:layout_width = "match_parent"
-        android:scrollbars="vertical"
         />
 
 
